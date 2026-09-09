@@ -1,4 +1,3 @@
-import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 
 export function GridPattern({ className }) {
@@ -9,21 +8,4 @@ export function GridPattern({ className }) {
   )
 }
 
-export function FloatingDots() {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {[...Array(6)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute h-1.5 w-1.5 rounded-full bg-[#FF4D8D]/30"
-          style={{
-            left: `${15 + i * 14}%`,
-            top: `${20 + (i % 3) * 20}%`,
-          }}
-          animate={{ y: [0, -12, 0], opacity: [0.3, 0.6, 0.3] }}
-          transition={{ duration: 3 + i, repeat: Infinity, delay: i * 0.4 }}
-        />
-      ))}
-    </div>
-  )
-}
+
